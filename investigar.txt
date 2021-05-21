@@ -1,4 +1,4 @@
-crear login y registro - en la doc de flask
+crear login, registro, index y perfil (SIN CSS) - en la doc de flask
 https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions
 
 doc de boostrap
