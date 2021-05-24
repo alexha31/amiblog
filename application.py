@@ -23,7 +23,7 @@ def register():
         password = request.form.get("password")
         confirm = request.form.get("confirmation")
 
-        if not username or not password or not confirm:
+        if not username or not password or not confirm or not name or not lastname:
             return render_template("register.html")
 
         user = db.execute("SELECT username FROM usuarios WHERE username = :username", username = username)
