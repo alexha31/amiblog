@@ -1,0 +1,25 @@
+Bootstrap 5:
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+https://www.youtube.com/watch?v=1kNwZbRiVcQ 
+https://themes.getbootstrap.com/ Temas de bootstrap
+
+GitHub
+https://www.youtube.com/watch?v=wHh3IgJvXcE
+https://www.youtube.com/watch?v=hWglK8nWh60
+ 
+JavaScript
+https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/What_is_JavaScript 
+https://www.youtube.com/playlist?list=PLhSj3UTs2_yVC0iaCGf16glrrfXuiSd0G
+
+
+HTML
+https://developer.mozilla.org/es/docs/Web/HTML 
+https://www.youtube.com/watch?v=rbuYtrNUxg4
+
+CSS
+https://developer.mozilla.org/es/docs/Web/CSS
+https://www.youtube.com/watch?v=W6GTDfrWjXs 
+
+Iconos
+https://iconscout.com/unicons/explore/line
+https://fontawesome.com/
