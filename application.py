@@ -9,6 +9,9 @@ app = Flask(__name__)
 
 db = SQL("sqlite:///amiblog.db")
 
+@app.route('/')
+def inicio():
+    return render_template("index.html")
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -17,26 +20,21 @@ def register():
         username = request.form.get("username")
         name = request.form.get("name")
         lastname = request.form.get("lastname")
-        password = generate_password_hash(request.form.get("password"))
+        password = request.form.get("password")
         confirm = request.form.get("confirmation")
 
-
-        if not username or password or confirm:
+        if not username or not password or not confirm:
             return render_template("register.html")
 
-        user = db.execute("SELECT * FROM usuarios WHERE username = :username", username = username)
-
-        #usuario = db.execute(f"INSERT INTO usuarios ( username, password, nombre, apellido) VALUES ('{username}','{password}', '{nombre}', '{apellido}')")
-        #db.execute(f'''INSERT INTO usuarios (id_user,nombre,apellido,correo)
-                    #VALUES ({id_user},'{nombre}','{apellido}','{email}')''')
-       # session["id_user"] = id_user
-        if len(user) != 0:
+        user = db.execute("SELECT username FROM usuarios WHERE username = :username", username = username)
+        if len(user) == 1:
             return render_template("register.html")
 
-        #if len(user) == 0 and password == confirm:
-        usuario = db.execute(f"INSERT INTO usuarios ( username, password, nombre, apellido) VALUES ('{username}','{password}', '{name}', '{lastname}')")
-           #x = db.execute(f"INSERT INTO usuarios (username, password, nombre, apellido) VALUES (:username,:password,:nombre, :apellido)", username = request.form.get("username"), password = generate_password_hash(request.form.get("password"), nombre = name, apellido = lastname))
-
-    return render_template("register.html")
+        if len(user) != 1 and password == confirm:
+            db.execute("INSERT INTO usuarios (username, password, nombre, apellido) VALUES (:username,:password,:nombre, :apellido)", username = request.form.get("username"), password = generate_password_hash(password), nombre = name, apellido = lastname)
+            print("a")
+        return redirect("/")
+    else:
+        return render_template("register.html")
 
 
