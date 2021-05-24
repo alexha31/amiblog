@@ -38,3 +38,18 @@ def register():
         return render_template("register.html")
 
 
+@app.route('/login', methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+    if not username or not password:
+        return render_template("login.html")
+
+    ingre = db.execute("SELECT * FROM usuarios WHERE username = :username",username=request.form.get("username"))
+
+    if len(ingre) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+            return apology("login.html")
+
