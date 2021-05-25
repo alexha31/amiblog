@@ -1,0 +1,27 @@
+.container{
+    width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  justify-content: center;
+  border: 1px;
+  flex-direction: column;
+  background-color: aquamarine;
+  text-align: center;
+}
+.container label {
+
+}
+.container input {
+    width: 90%;
+  height: 20px;
+  margin: 0.5rem;
+}
+
+.container button {
+    padding: 0.5em 1em;
+  border: none;
+  border: 2px solid rgba(125, 209, 235, 0.719);
+  border-radius: 10px;
+  background: rgb(63, 190, 173);
+  cursor: pointer;
+}
