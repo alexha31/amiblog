@@ -62,3 +62,10 @@ def login():
             session["ID"] = ingre[0]["ID"]
     else:
         return render_template("login.html")
+
+@app.route('/config')
+def config():
+    return render_template("config.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
