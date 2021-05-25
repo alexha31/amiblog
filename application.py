@@ -37,4 +37,29 @@ def register():
     else:
         return render_template("register.html")
 
+@app.route('/login', methods=["GET", "POST"])
+def login():
 
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        if not username or not password:
+            return render_template("login.html")
+
+        ingre = db.execute("SELECT * FROM usuarios WHERE username = :username",username=request.form.get("username"))
+
+        if len(ingre) != 1:
+            return render_template("login.html")
+
+        contra = ingre[0]["password"]
+        if not  check_password_hash(contra, password):
+            return render_template("login.html")
+        else:
+            return redirect("/")
+            session["ID"] = ingre[0]["ID"]
+    else:
+        return render_template("login.html")
+        
+if __name__ == "__main__":
+    app.run(debug=True)

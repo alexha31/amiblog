@@ -5,10 +5,16 @@
   justify-content: center;
   border: 1px;
   flex-direction: column;
-  background-color: aquamarine;
+  background-color: rgb(245, 248, 229);
   text-align: center;
 }
 .container label {
+    
+    font-family: "Roboto", sans-serif;
+    line-height: 48px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
 
 }
 .container input {
@@ -20,8 +26,8 @@
 .container button {
     padding: 0.5em 1em;
   border: none;
-  border: 2px solid rgba(125, 209, 235, 0.719);
+  border: 2px solid rgb(247, 237, 197);
   border-radius: 10px;
-  background: rgb(63, 190, 173);
+  background: rgb(243, 235, 207);
   cursor: pointer;
 }
