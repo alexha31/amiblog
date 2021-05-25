@@ -55,7 +55,6 @@ def login():
 
         contra = ingre[0]["password"]
         if not  check_password_hash(contra, password):
-            print("contra")
             return render_template("login.html")
         else:
             return redirect("/")
