@@ -5,7 +5,7 @@
 {% block main %}
 
 <link rel="stylesheet" href="static/styles.css">
-<div class="container">
+<div class="contenedor">
     <form action="/config" method="post">
         <div>
             <h1>Editar perfil </h1>
@@ -15,17 +15,21 @@
         </div>
         <div>
             <input name="lastname" placeholder="Apellido" type="text"/>
-        </div>
-        <div>
             <h4> Nombre de usuario </h4>
             <input name="username" placeholder="" type="text"/>
         </div>
-</div>
+
         <div class="acerca">
             <h4> Acerca de tu perfil </h4>
-            <input name="acercaperfil" type="text"/>
+            <textarea name="acercade" id="texto" cols="30" rows="10"></textarea>
+            <div>
+                <button> Cancelar</button>
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+            <button type="button" class="btn btn-primary">Primary</button>
         </div>
-        <button> Cancelar</button>
-        <button type="submit">Guardar</button>
-
+    </form>
+</div>    
+            
+       
 {% endblock %}

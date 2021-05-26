@@ -1,3 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
 .container{
     width: 100%;
   max-width: 600px;
@@ -8,26 +13,63 @@
   background-color: aquamarine;
   text-align: center;
 }
-.container label {
-
-}
 .container input {
     width: 90%;
   height: 20px;
   margin: 0.5rem;
 }
 
-.container button {
-    padding: 0.5em 1em;
+/*.container button {
+  padding: 0.5em 1em;
+  border: none;
+  border: 2px solid rgba(62, 164, 196, 0.719);
+  border-radius: 10px;
+  background: rgb(63, 190, 173);
+  cursor: pointer;
+}*/
+.acerca{
+  padding: 15px;
+  flex-direction: column;
+  width: 45%;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 0 auto;
+
+}
+.contenedor{
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  padding: 10px;
+  margin: 20px auto;
+  justify-content: center;
+  border: 1px;
+  border-radius: 15px;
+  flex-direction: column;
+  background: linear-gradient(#c3c3d4, #021e25);    
+  text-align: center;
+}
+.contenedor input {
+  width: 50%;
+  height: 40px;
+  border-radius: 7px;
+  border: 2px solid rgba(36, 35, 35, 0.719);
+  margin: 0.5rem;
+}
+#texto{
+  border-radius: 9px;
+  
+}
+h4
+{
+  font-size: 18px;
+}
+/*.contenedor button {
+  padding: 0.5em 1em;
   border: none;
   border: 2px solid rgba(125, 209, 235, 0.719);
   border-radius: 10px;
   background: rgb(63, 190, 173);
   cursor: pointer;
-}
-.acerca input{
-  width: 100%;
-  height: 100%;
-  background-color: blue;
-  justify-content: center;
-}
+}*/
