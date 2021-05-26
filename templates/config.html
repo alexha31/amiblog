@@ -3,31 +3,29 @@
     Configuración
 {% endblock %}
 {% block main %}
-<form action="/config" method="post">
-    <div>
-        <p>
-            Editar perfil
-        </p>
-    </div>
-    <div>
-        <input name="name" placeholder="Nombre" type="text"/>
-    </div>
-    <div>
-        <input name="lastname" placeholder="Apellido" type="text"/>
-    </div>
-    <div>
-        <p>
-            Nombre de usuario
-        </p>
-        <input name="username" placeholder="" type="text"/>
-    </div>
-    <div>
-        <p>
-            Acerca de tu perfil
-        </p>
-        <input name="acercaperfil" type="text"/>
-    </div>
-    <button> Cancelar</button>
-    <button type="submit">Guardar</button>
+
+<link rel="stylesheet" href="static/styles.css">
+<div class="container">
+    <form action="/config" method="post">
+        <div>
+            <h1>Editar perfil </h1>
+        </div>
+        <div>
+            <input name="name" placeholder="Nombre" type="text"/>
+        </div>
+        <div>
+            <input name="lastname" placeholder="Apellido" type="text"/>
+        </div>
+        <div>
+            <h4> Nombre de usuario </h4>
+            <input name="username" placeholder="" type="text"/>
+        </div>
+</div>
+        <div class="acerca">
+            <h4> Acerca de tu perfil </h4>
+            <input name="acercaperfil" type="text"/>
+        </div>
+        <button> Cancelar</button>
+        <button type="submit">Guardar</button>
 
 {% endblock %}

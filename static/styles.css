@@ -25,3 +25,9 @@
   background: rgb(63, 190, 173);
   cursor: pointer;
 }
+.acerca input{
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  justify-content: center;
+}
