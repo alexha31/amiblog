@@ -1,33 +1,33 @@
-.container{
-    width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  justify-content: center;
-  border: 1px;
-  flex-direction: column;
-  background-color: rgb(245, 248, 229);
-  text-align: center;
+.contenedor{
+  width: 100%;
+max-width: 600px;
+margin: 20px auto;
+justify-content: center;
+border: 1px;
+flex-direction: column;
+background-color: rgb(245, 248, 229);
+text-align: center;
 }
-.container label {
-    
-    font-family: "Roboto", sans-serif;
-    line-height: 48px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
+.contenedor label {
+  
+  font-family: "Roboto", sans-serif;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
 
 }
-.container input {
-    width: 90%;
-  height: 20px;
-  margin: 0.5rem;
+.contenedor input {
+  width: 90%;
+height: 30px;
+margin: 0.5rem;
 }
 
-.container button {
-    padding: 0.5em 1em;
-  border: none;
-  border: 2px solid rgb(247, 237, 197);
-  border-radius: 10px;
-  background: rgb(243, 235, 207);
-  cursor: pointer;
+.contenedor button {
+  padding: 0.5em 1em;
+border: none;
+border: 2px solid rgb(247, 237, 197);
+border-radius: 10px;
+background: rgb(243, 235, 207);
+cursor: pointer;
 }

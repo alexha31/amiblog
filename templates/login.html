@@ -1,11 +1,12 @@
 {%extends "layout.html"%}
 {% block title %}
     Login
+<link rel="stylesheet" href="static/styles.css">
 {% endblock %}
 
 {% block main %}
 
-<div class="container">
+<div class="contenedor">
      <form action="/login" method="post">
         <div>
             <label>Nombre de usuario</label>
@@ -15,7 +16,9 @@
             <label>Contraseña</label>
             <input name="password" placeholder="Contraseña" required="" type="password"/>
         </div>
-        <button type="submit">Ingresar</button>
+        <div>
+           <button type="submit">Ingresar</button> 
+        </div>
         </form>
 </div>
 {% endblock %}
