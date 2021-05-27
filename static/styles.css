@@ -1,14 +1,24 @@
-.contenedor{
-  width: 100%;
-max-width: 600px;
-margin: 20px auto;
-justify-content: center;
-border: 1px;
-flex-direction: column;
-background-color: rgb(245, 248, 229);
-text-align: center;
+body{
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
-.contenedor label {
+
+.container{
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 7px 7px 15px #000;
+
+  
+  text-align: center;
+}
+.container label {
   
   font-family: "Roboto", sans-serif;
   line-height: 30px;
@@ -17,17 +27,25 @@ text-align: center;
   color: #333;
 
 }
-.contenedor input {
+/*.container input {
   width: 90%;
 height: 30px;
 margin: 0.5rem;
-}
+}*/
 
-.contenedor button {
-  padding: 0.5em 1em;
-border: none;
-border: 2px solid rgb(247, 237, 197);
+/*.container button {
+padding: 0.5em 1em;
+border: 2px solid rgb(248, 235, 187);
 border-radius: 10px;
 background: rgb(243, 235, 207);
 cursor: pointer;
-}
+}*/
+
+ /*.btn{
+   background: blue;
+ }*/
+
+ .form-control{
+   width: 50%;
+   margin: 0 auto;
+ }

@@ -5,28 +5,28 @@
 
 {% block main %}
     <form action="/register" method="post">
-        <div class="contenedor">
+        <div class="container">
             <div>
                 <label>Nombre de usuario</label>
-                <input autocomplete="off" autofocus name="username" placeholder="Nombre de usuario" required= "" type="text">
+                <input autocomplete="off" autofocus name="username" placeholder="Nombre de usuario" class="form-control" required= "" type="text">
             </div>
             <div>
                 <label>Nombre</label>
-                <input autocomplete="off" autofocus name="name" placeholder="Nombre" type="text">
+                <input autocomplete="off" autofocus name="name" placeholder="Nombre" class="form-control" type="text">
             </div>
             <div>
                 <label>Apellido</label>
-                <input autocomplete="off" autofocus name="lastname" placeholder="Apellido" type="text">
+                <input autocomplete="off" autofocus name="lastname" placeholder="Apellido" class="form-control" type="text">
             </div>
             <div>
                 <label>Contraseña</label>
-                <input name="password" autofocus placeholder="Contraseña" type="password">
+                <input name="password" autofocus placeholder="Contraseña" class="form-control" type="password">
             </div>
             <div>
                 <label>Confirme su contraseña</label>
-                <input name="confirmation" placeholder="Confirme su contraseña" type="password">
+                <input name="confirmation" placeholder="Confirme su contraseña" class="form-control" type="password">
             </div>
-        <button type="submit">Registrarse</button>
+        <button  class="btn btn-outline-success"type="submit">Registrarse</button>
         </form>
         </div>
         
