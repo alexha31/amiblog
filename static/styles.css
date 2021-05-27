@@ -1,3 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
 body{
   background: #6190E8;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
@@ -6,9 +11,11 @@ body{
 }
 
 .container{
-  width: 100%;
+  width: 100vw;
+  padding: 20px;
+  height: 80vh;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 10px auto;
   justify-content: center;
   border-radius: 15px;
   flex-direction: column;
@@ -18,34 +25,21 @@ body{
   
   text-align: center;
 }
-.container label {
-  
-  font-family: "Roboto", sans-serif;
-  line-height: 30px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-
+.container h1{
+  margin-bottom: .5rem;
 }
-/*.container input {
-  width: 90%;
-height: 30px;
-margin: 0.5rem;
-}*/
-
-/*.container button {
-padding: 0.5em 1em;
-border: 2px solid rgb(248, 235, 187);
-border-radius: 10px;
-background: rgb(243, 235, 207);
-cursor: pointer;
-}*/
-
- /*.btn{
-   background: blue;
- }*/
 
  .form-control{
-   width: 50%;
+   width: 95%;
    margin: 0 auto;
+   height: 5px;
  }
+ .mb-3 label{
+   margin-left: 1%;
+   color: gray;
+   font-size: 14px;
+ }
+ .form-floating>.form-control, .form-floating>.form-select{
+ height: 2.75rem;
+ padding: .5rem;
+}
