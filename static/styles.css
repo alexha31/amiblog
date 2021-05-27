@@ -38,20 +38,20 @@
 
 }
 .contenedor{
-  width: 100%;
+  /*width: 100%;
   max-width: 600px;
-  height: 600px;
+  height: 600px;*/
   padding: 10px;
   margin: 20px auto;
   justify-content: center;
   border: 1px;
-  border-radius: 15px;
+  /*border-radius: 15px;*/
   flex-direction: column;
   background: linear-gradient(#c3c3d4, #021e25);    
   text-align: center;
 }
 .contenedor input {
-  width: 50%;
+  width: 30%;
   height: 40px;
   border-radius: 7px;
   border: 2px solid rgba(36, 35, 35, 0.719);
@@ -61,6 +61,7 @@
   border-radius: 9px;
   
 }
+
 h4
 {
   font-size: 18px;
