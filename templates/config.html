@@ -1,0 +1,34 @@
+{%extends "layout.html"%}
+{% block title %}
+    Configuración
+{% endblock %}
+{% block main %}
+
+<link rel="stylesheet" href="static/styles.css">
+<div class="contenedor">
+    <form action="/config" method="post">
+        <div class="textoprincipal">
+            <h1>Editar perfil </h1>
+        </div>
+        <div>
+            <input name="name" placeholder="Nombre" type="text"/>
+        </div>
+        <div>
+            <input name="lastname" placeholder="Apellido" type="text"/>
+            <h4> Nombre de usuario </h4>
+            <input name="username" placeholder="" type="text"/>
+        </div>
+
+        <div class="acerca">
+            <h4> Acerca de tu perfil </h4>
+            <textarea name="acercade" id="texto" cols="30" rows="10"></textarea>
+            <div>
+                <button class="btn btn-primary">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -5,21 +5,30 @@
 
 {% block main %}
     <form action="/register" method="post">
-        <div>
-            <input autocomplete="off" autofocus name="username" placeholder="Nombre de usuario" type="text">
+        <div class="container">
+            <h2>Registrarse</h2>
+            <div class="mb-3 form-floating">
+                <input autocomplete="off" autofocus name="username" placeholder="Nombre de usuario" class="form-control" required= "" type="text">
+                <label for="username">Nombre de usuario</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input autocomplete="off" autofocus name="name" placeholder="Nombre" class="form-control" type="text">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input autocomplete="off" autofocus name="lastname" placeholder="Apellido" class="form-control" type="text">
+                <label for="lastname">Apellido</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input name="password" autofocus placeholder="Contraseña" class="form-control" type="password">
+                <label for="password" >Contraseña</label>
+            </div>
+            <div class="mb-3 form-floating" >
+                <input name="confirmation" placeholder="Confirme su contraseña" class="form-control" type="password">
+                <label for="confirmation ">Confirme su contraseña</label>
+            </div>
+        <button  class="btn btn-outline-success" type="submit">Registrarse</button>
+        </form>
         </div>
-        <div>
-            <input autocomplete="off" autofocus name="name" placeholder="Nombre" type="text">
-        </div>
-        <div>
-            <input autocomplete="off" autofocus name="lastname" placeholder="Apellido" type="text">
-        </div>
-        <div>
-            <input name="password" autofocus placeholder="Contraseña" type="password">
-        </div>
-        <div>
-            <input name="confirmation" placeholder="Confirme su contraseña" type="password">
-        </div>
-    <button type="submit">Register</button>
-    </form>
+        
 {% endblock %}
