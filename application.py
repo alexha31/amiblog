@@ -33,10 +33,10 @@ def register():
             return render_template("register.html")
 
         if len(user) != 1 and password == confirm:
-            db.execute("INSERT INTO usuarios (username, password, nombre, apellido) VALUES (:username,:password,:nombre, :apellido)", username = request.form.get("username"), password = generate_password_hash(password), nombre = name, apellido = lastname)
+            a = db.execute("INSERT INTO usuarios (username, password, nombre, apellido) VALUES (:username,:password,:nombre, :apellido)", username = request.form.get("username"), password = generate_password_hash(password), nombre = name, apellido = lastname)
             print("a")
-        session["ID"] = user[0]["ID"]
-        return redirect("/")
+            session["ID"] = a[0]["ID"]
+            return redirect("/")
     else:
         return render_template("register.html")
 
