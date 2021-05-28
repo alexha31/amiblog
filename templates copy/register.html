@@ -1,0 +1,25 @@
+{%extends "layout.html"%}
+{% block title %}
+    Registrarse
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div>
+            <input autocomplete="off" autofocus name="username" placeholder="Nombre de usuario" type="text">
+        </div>
+        <div>
+            <input autocomplete="off" autofocus name="name" placeholder="Nombre" type="text">
+        </div>
+        <div>
+            <input autocomplete="off" autofocus name="lastname" placeholder="Apellido" type="text">
+        </div>
+        <div>
+            <input name="password" autofocus placeholder="Contraseña" type="password">
+        </div>
+        <div>
+            <input name="confirmation" placeholder="Confirme su contraseña" type="password">
+        </div>
+    <button type="submit">Register</button>
+    </form>
+{% endblock %}
