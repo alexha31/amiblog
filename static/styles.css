@@ -3,32 +3,7 @@
   margin: 0;
   box-sizing: 0;
 }
-.container{
-    width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  justify-content: center;
-  border: 1px;
-  flex-direction: column;
-  background-color: aquamarine;
-  text-align: center;
-}
-.container input {
-    width: 90%;
-  height: 20px;
-  margin: 0.5rem;
-}
 
-.acerca{
-  padding: 15px;
-  flex-direction: column;
-  width: 45%;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  margin: 0 auto;
-
-}
 .contenedor{
   /*background: linear-gradient(#c3c3d4, #021e25);  */ 
   flex-direction: column;
