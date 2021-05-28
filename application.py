@@ -35,18 +35,20 @@ def register():
         if len(user) != 1 and password == confirm:
             a = db.execute("INSERT INTO usuarios (username, password, nombre, apellido) VALUES (:username,:password,:nombre, :apellido)", username = request.form.get("username"), password = generate_password_hash(password), nombre = name, apellido = lastname)
             print("a")
-            session["ID"] = a[0]["ID"]
-            return redirect("/")
+        session["user_id"] = a
+        return redirect("/")
     else:
         return render_template("register.html")
 
 @app.route('/')
-#@login_required
+@login_required
 def inicio():
     return render_template("index.html")
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
+
+    session.clear()
 
     if request.method == "POST":
         username = request.form.get("username")
@@ -65,14 +67,15 @@ def login():
             print("socorro jesus")
             return render_template("login.html")
         else:
-            session["ID"] = ingre[0]["ID"]
+            print("Bendecido")
+            session["user_id"] = ingre[0]["ID"]
             return redirect("/")
     else:
         return render_template("login.html")
 
 
 @app.route('/config', methods=["GET", "POST"])
-@login_required
+#@login_required
 def config():
     if request.method == "POST":
         nombre = request.form.get("name")
@@ -89,6 +92,15 @@ def config():
             return render_template("config.html")
         else:
             x = db.execute("UPDATE usuarios SET username = :username WHERE id = :id", username = username, id = session["ID"])
+        return render_template("config.html")
+    else:
+        return render_template("config.html")
+
+@app.route("/salir")
+def salir():
+
+    session.clear()
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)
