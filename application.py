@@ -103,9 +103,5 @@ def salir():
     return redirect("/")
 
 
-@app.route('/config')
-def config():
-    return render_template("config.html")
-
 if __name__ == "__main__":
     app.run(debug=True)
