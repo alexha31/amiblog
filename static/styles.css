@@ -7,8 +7,15 @@
 .contenedor{
   /*background: linear-gradient(#c3c3d4, #021e25);  */ 
   flex-direction: column;
+<<<<<<< HEAD
   margin: 0 auto;
   justify-content: center; 
+=======
+  background: #fff;
+  box-shadow: 7px 7px 15px rgba(5, 5, 5, 0.527);
+
+
+>>>>>>> Isabella
   text-align: center;
   background: #6190E8; 
   background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8); 
