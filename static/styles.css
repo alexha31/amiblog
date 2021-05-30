@@ -25,8 +25,8 @@ body{
 
   text-align: center;
 }
-.container h1{
-  margin-bottom: .5rem;
+.container h2{
+  margin-bottom: .8rem;
 }
 
  .form-control{
@@ -42,4 +42,23 @@ body{
  .form-floating>.form-control, .form-floating>.form-select{
  height: 2.75rem;
  padding: .5rem;
+}
+.h1{
+    font-family: 'Fjalla One', sans-serif;
+    text-align:center;
+}
+.post{
+  width: 100vw;
+  padding: 20px;
+  height: 80vh;
+  max-width: 600px;
+  margin: 10px auto;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #fff;
+}
+
+.post p{
+    text-align:center;
 }
