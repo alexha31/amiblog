@@ -1,0 +1,23 @@
+{%extends "layout.html"%}
+{% block title %}
+    Mi perfil
+{% endblock %}
+
+{% block main %}
+<div class="back">
+    <div>
+        <div>
+
+        </div>
+        <div>
+            <h2>{{ username }}</h2>
+        </div>
+    </div>
+    <div>
+        <form action="/perfil" method="POST">
+            <h4> Realizar una publicación </h4>
+            <textarea name="acercade" id="texto" cols="30" rows="10"></textarea>
+        </form>
+    </div>
+</div>
+{% endblock %}

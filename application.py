@@ -75,7 +75,7 @@ def login():
 
 
 @app.route('/config', methods=["GET", "POST"])
-#@login_required
+@login_required
 def config():
     if request.method == "POST":
         nombre = request.form.get("name")
@@ -95,6 +95,17 @@ def config():
         return render_template("config.html")
     else:
         return render_template("config.html")
+
+@app.route('/perfil', methods=["GET", "POST"])
+@login_required
+def perfil():
+    if request.method == "POST":
+        
+        return render_template("perfil.html")
+    else:
+        username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        print("a")
+        return render_template("perfil.html", username = username)
 
 @app.route("/salir")
 def salir():
