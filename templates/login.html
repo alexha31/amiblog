@@ -9,11 +9,11 @@
      <form action="/login" method="post">
         <h2>Iniciar sesión</h2>
         <div class="mb-3 form-floating">
-            <input name="username" placeholder="Nombre de usuario" class="form-control" required="" type="text"/>
+            <input name="username" placeholder="Nombre de usuario" class="form-control" required="" oninvalid="alert('Debe rellenar todos los campos')" type="text"/>
             <label for="name">Nombre de usuario</label>
         </div>
         <div class="mb-3 form-floating">
-            <input name="password" placeholder="Contraseña" class="form-control" required="" type="password"/>
+            <input name="password" placeholder="Contraseña" class="form-control" required="" oninvalid="alert('Debe rellenar todos los campos')" type="password"/>
             <label for "password">Contraseña</label>
         </div>
         <div>

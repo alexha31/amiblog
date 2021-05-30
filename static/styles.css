@@ -13,7 +13,7 @@ body{
 .container{
   width: 100vw;
   padding: 20px;
-  height: 80vh;
+  height: 60vh;
   max-width: 600px;
   margin: 10px auto;
   justify-content: center;
@@ -29,7 +29,7 @@ body{
   margin-bottom: .8rem;
 }
 
- .form-control{
+.form-control{
    width: 95%;
    margin: 0 auto;
    height: 5px;
@@ -38,6 +38,13 @@ body{
    margin-left: 1%;
    color: gray;
    font-size: 14px;
+ }
+ .form-control1{
+
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    border-radius: 5px;
  }
  .form-floating>.form-control, .form-floating>.form-select{
  height: 2.75rem;
