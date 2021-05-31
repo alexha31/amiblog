@@ -3,22 +3,49 @@
   margin: 0;
   box-sizing: 0;
 }
-.container{
-    width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  justify-content: center;
-  border: 1px;
-  flex-direction: column;
-  background-color: aquamarine;
-  text-align: center;
-}
-.container input {
-    width: 90%;
-  height: 20px;
-  margin: 0.5rem;
+<<<<<<< HEAD
+=======
+body{
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
+>>>>>>> mix_feo
+.container{
+  width: 100vw;
+  padding: 20px;
+  height: 80vh;
+  max-width: 600px;
+  margin: 10px auto;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 7px 7px 15px #000;
+
+
+  text-align: center;
+}
+.container h1{
+  margin-bottom: .5rem;
+}
+
+ .form-control{
+   width: 95%;
+   margin: 0 auto;
+   height: 5px;
+ }
+ .mb-3 label{
+   margin-left: 1%;
+   color: gray;
+   font-size: 14px;
+ }
+ .form-floating>.form-control, .form-floating>.form-select{
+ height: 2.75rem;
+ padding: .5rem;
+}
 .acerca{
   padding: 15px;
   flex-direction: column;
@@ -70,3 +97,7 @@ h1
   font-weight: bold;
   color: #333;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> mix_feo

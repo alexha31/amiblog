@@ -102,6 +102,9 @@ def salir():
     session.clear()
     return redirect("/")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> mix_feo
 if __name__ == "__main__":
     app.run(debug=True)
