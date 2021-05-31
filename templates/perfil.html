@@ -4,19 +4,23 @@
 {% endblock %}
 
 {% block main %}
-<div class="back">
-    <div>
-        <div>
-
+<div class="">
+    <div class="sup" >
+        <div class="x">
+            <h2 class="h2 text-center ">{{nombre}} {{apellido}}</h2>
         </div>
         <div>
-            <h2>{{ username }}</h2>
+            <h3 class="h6 text-center">{{ username }}</h3>
         </div>
+        <div>
+            <p class="text-center">{{descripcion}}</p>
+        </div>
+        <br>
     </div>
-    <div>
+    <div class="mb-3">
         <form action="/perfil" method="POST">
-            <h4> Realizar una publicación </h4>
-            <textarea name="acercade" id="texto" cols="30" rows="10"></textarea>
+              <label for="exampleFormControlTextarea1" class="form-label">Nueva publicación</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </form>
     </div>
 </div>

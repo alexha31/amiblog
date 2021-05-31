@@ -13,7 +13,7 @@ body{
 .container{
   width: 100vw;
   padding: 20px;
-  height: 60vh;
+  height: 70vh;
   max-width: 600px;
   margin: 10px auto;
   justify-content: center;
@@ -24,6 +24,27 @@ body{
 
 
   text-align: center;
+}
+.sup{
+    width: 100vw;
+    padding: 20px;
+    height: 40vh;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+    background: #fff;
+}
+.middle{
+    width: 100vw;
+    padding: 20px;
+    height: 20vh;
+    justify-content: right;
+    border-radius: 5px;
+    flex-direction: column;
+    background: #fff;
+}
+.x{
+    margin-top: 8px;
 }
 .container h2{
   margin-bottom: .8rem;
@@ -79,16 +100,16 @@ body{
 }
 
 .contenedor{
-  /*background: linear-gradient(#c3c3d4, #021e25);  */ 
+  /*background: linear-gradient(#c3c3d4, #021e25);  */
   flex-direction: column;
   margin: 0 auto;
-  justify-content: center; 
+  justify-content: center;
   background: #fff;
   box-shadow: 7px 7px 15px rgba(5, 5, 5, 0.527);
 
   text-align: center;
-  background: #6190E8; 
-  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8); 
+  background: #6190E8;
+  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);
   background: linear-gradient(to left, #A7BFE8, #6190E8);
 }
 .contenedor input {
@@ -100,7 +121,7 @@ body{
 }
 #texto{
   border-radius: 9px;
-  
+
 }
 
 h4
