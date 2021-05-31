@@ -3,22 +3,113 @@
   margin: 0;
   box-sizing: 0;
 }
+body{
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-.contenedor{
-  /*background: linear-gradient(#c3c3d4, #021e25);  */ 
+}
+
+.container{
+  width: 100vw;
+  padding: 20px;
+  height: 70vh;
+  max-width: 600px;
+  margin: 10px auto;
+  justify-content: center;
+  border-radius: 15px;
   flex-direction: column;
-<<<<<<< HEAD
-  margin: 0 auto;
-  justify-content: center; 
-=======
   background: #fff;
   box-shadow: 7px 7px 15px rgba(5, 5, 5, 0.527);
 
 
->>>>>>> Isabella
   text-align: center;
-  background: #6190E8; 
-  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8); 
+}
+.sup{
+    width: 100vw;
+    padding: 20px;
+    height: 40vh;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+    background: #fff;
+}
+.middle{
+    width: 100vw;
+    padding: 20px;
+    height: 20vh;
+    justify-content: right;
+    border-radius: 5px;
+    flex-direction: column;
+    background: #fff;
+}
+.x{
+    margin-top: 8px;
+}
+.container h2{
+  margin-bottom: .8rem;
+}
+
+.form-control{
+   width: 95%;
+   margin: 0 auto;
+   height: 5px;
+ }
+ .mb-3 label{
+   margin-left: 1%;
+   color: gray;
+   font-size: 14px;
+ }
+ .form-control1{
+
+    width: 95%;
+    margin: 0 auto;
+    /*height: 100%;*/
+    border-radius: 5px;
+ }
+ .form-floating>.form-control, .form-floating>.form-select{
+ height: 2.75rem;
+ padding: .5rem;
+}
+.h1{
+    font-family: 'Fjalla One', sans-serif;
+    text-align:center;
+}
+.me-2{
+  align-items:right;
+}
+.post{
+  width: 100vw;
+  padding: 20px;
+  height: 80vh;
+  max-width: 600px;
+  margin: 10px auto;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #fff;
+}
+
+.post p{
+    text-align:center;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+.contenedor{
+  /*background: linear-gradient(#c3c3d4, #021e25);  */
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 7px 7px 15px rgba(5, 5, 5, 0.527);
+
+  text-align: center;
+  background: #6190E8;
+  background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);
   background: linear-gradient(to left, #A7BFE8, #6190E8);
 }
 .contenedor input {
@@ -30,7 +121,7 @@
 }
 #texto{
   border-radius: 9px;
-  
+
 }
 
 h4
