@@ -43,7 +43,9 @@ def register():
 @app.route('/')
 @login_required
 def inicio():
-    return render_template("index.html")
+    username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+    print("a")
+    return render_template("index.html", username = username)
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -75,33 +77,44 @@ def login():
 
 
 @app.route('/config', methods=["GET", "POST"])
-#@login_required
+@login_required
 def config():
     if request.method == "POST":
         nombre = request.form.get("name")
         apellido = request.form.get("lastname")
         username = request.form.get("username")
-        descripcion = request.form.get("acercaperfil")
+        description = request.form.get("acercade")
 
-        if not nombre or not apellido or not username:
-            return render_template("config.html")
+        #usuario = db.execute("SELECT * FROM usuarios WHERE username = :username", username = username)
 
-        usuario = db.execute("SELECT * FROM usuarios WHERE username = :username", username = username)
+        #x = db.execute("UPDATE usuarios SET username = :username WHERE ID = :ID", username = username, ID = session["user_id"])
 
-        if len(usuario) == 1:
-            return render_template("config.html")
-        else:
-            x = db.execute("UPDATE usuarios SET username = :username WHERE id = :id", username = username, id = session["ID"])
-        return render_template("config.html")
+        descripcion = db.execute("INSERT INTO usuarios (descripcion) VALUES (:descripcion)", descripcion = description)
+
+        print("A")
+        return render_template("config.html", descripcion = descripcion)
     else:
         return render_template("config.html")
+
+@app.route('/perfil', methods=["GET", "POST"])
+@login_required
+def perfil():
+    if request.method == "POST":
+        descripcion = db.execute("SELECT descripcion FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        return render_template("perfil.html", descripcion)
+    else:
+        nombre = db.execute("SELECT nombre FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        apellido = db.execute("SELECT apellido FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        descripcion = db.execute("SELECT descripcion FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        print("a")
+        return render_template("perfil.html", username = username, nombre = nombre, apellido = apellido, descripcion = descripcion)
 
 @app.route("/salir")
 def salir():
 
     session.clear()
     return redirect("/")
-
 
 if __name__ == "__main__":
     app.run(debug=True)
