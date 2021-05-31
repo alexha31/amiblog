@@ -1,0 +1,27 @@
+{%extends "layout.html"%}
+{% block title %}
+    Mi perfil
+{% endblock %}
+
+{% block main %}
+<div class="">
+    <div class="sup" >
+        <div class="x">
+            <h2 class="h2 text-center ">{{nombre}} {{apellido}}</h2>
+        </div>
+        <div>
+            <h3 class="h6 text-center">{{ username }}</h3>
+        </div>
+        <div>
+            <p class="text-center">{{descripcion}}</p>
+        </div>
+        <br>
+    </div>
+    <div class="mb-3">
+        <form action="/perfil" method="POST">
+              <label for="exampleFormControlTextarea1" class="form-label">Nueva publicación</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </form>
+    </div>
+</div>
+{% endblock %}
