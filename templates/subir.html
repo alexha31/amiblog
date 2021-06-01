@@ -1,0 +1,17 @@
+{%extends "layout.html"%}
+{% block title %}
+    Subir un post
+{% endblock %}
+
+{% block main %}
+
+<div class="mb-3">
+    <form action="/postnuevo" method="POST">
+        <input type="file" name="archivo"><br>
+        <button type="submit">Subir imagen</button><br>
+        <label for="exampleFormControlTextarea1" class="form-label">Nueva publicación</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </form>
+</div>
+
+{% endblock %}
