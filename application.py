@@ -90,7 +90,7 @@ def config():
         #x = db.execute("UPDATE usuarios SET username = :username WHERE ID = :ID", username = username, ID = session["user_id"])
 
         descripcion = db.execute("INSERT INTO usuarios (descripcion) VALUES (:descripcion)", descripcion = description)
-
+        #dts = db.execute("SELECT nombre,apellido,username,descripcion FROM usuarios WHERE ID = :id" id = session["user_id"])
         print("A")
         return render_template("config.html", descripcion = descripcion)
     else:
@@ -107,6 +107,7 @@ def perfil():
         apellido = db.execute("SELECT apellido FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         descripcion = db.execute("SELECT descripcion FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+
         print("a")
         return render_template("perfil.html", username = username, nombre = nombre, apellido = apellido, descripcion = descripcion)
 

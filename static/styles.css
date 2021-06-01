@@ -17,6 +17,8 @@
     width: 90%;
   height: 20px;
   margin: 0.5rem;
+}
+
 body{
   background: #6190E8;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
