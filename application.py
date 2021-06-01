@@ -45,7 +45,7 @@ def register():
 def inicio():
     username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
     print("a")
-    return render_template("index.html", username = username)
+    return render_template("index.html", username = username[0]["username"])
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -82,16 +82,11 @@ def config():
     if request.method == "POST":
         nombre = request.form.get("name")
         apellido = request.form.get("lastname")
-        username = request.form.get("username")
         description = request.form.get("acercade")
 
-        #usuario = db.execute("SELECT * FROM usuarios WHERE username = :username", username = username)
-
-        #x = db.execute("UPDATE usuarios SET username = :username WHERE ID = :ID", username = username, ID = session["user_id"])
-
-        descripcion = db.execute("INSERT INTO usuarios (descripcion) VALUES (:descripcion)", descripcion = description)
-        #dts = db.execute("SELECT nombre,apellido,username,descripcion FROM usuarios WHERE ID = :id" id = session["user_id"])
-        print("A")
+        descripcion = db.execute("UPDATE usuarios SET descripcion = :descripcion WHERE ID = :ID", descripcion = description, ID = session["user_id"])
+        nombre = db.execute("UPDATE usuarios SET nombre = :nombre WHERE ID = :ID", nombre = nombre, ID = session["user_id"])
+        apellido = db.execute("UPDATE usuarios SET apellido = :apellido WHERE ID = :ID", apellido= apellido, ID = session["user_id"])
         return render_template("config.html", descripcion = descripcion)
     else:
         return render_template("config.html")
@@ -109,7 +104,7 @@ def perfil():
         descripcion = db.execute("SELECT descripcion FROM usuarios WHERE ID = :ID", ID = session["user_id"])
 
         print("a")
-        return render_template("perfil.html", username = username, nombre = nombre, apellido = apellido, descripcion = descripcion)
+        return render_template("perfil.html", username = username[0]["username"], nombre = nombre[0]["nombre"], apellido = apellido[0]["apellido"], descripcion = descripcion[0]["descripcion"])
 
 @app.route("/salir")
 def salir():
