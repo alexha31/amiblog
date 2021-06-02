@@ -112,5 +112,11 @@ def salir():
     session.clear()
     return redirect("/")
 
+@app.route('/busq', methods=["GET", "POST"])
+@login_required
+def busqueda():
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
