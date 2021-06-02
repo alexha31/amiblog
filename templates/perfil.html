@@ -12,16 +12,19 @@
         <div>
             <h3 class="h6 text-center">{{ username }}</h3>
         </div>
+        <br>
         <div>
+            <label class="h4 text-center text-muted">Sobre mí</label>
             <p class="text-center">{{descripcion}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="middle">
+        <div class="d-grid gap-2 mx-auto">
+              <a href="/nuevopost" class="btn btn-outline-info" role="button">Subir un post</a>
         </div>
         <br>
     </div>
-    <div class="mb-3">
-        <form action="/perfil" method="POST">
-              <label for="exampleFormControlTextarea1" class="form-label">Nueva publicación</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </form>
-    </div>
+
 </div>
 {% endblock %}

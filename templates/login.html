@@ -6,11 +6,14 @@
 {% block main %}
 
 <div class="container">
-     <form action="/login" method="post">
+     <form class="needs-validation" action="/login" method="post">
         <h2>Iniciar sesión</h2>
-        <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating ">
             <input name="username" placeholder="Nombre de usuario" class="form-control" required="" oninvalid="alert('Debe rellenar todos los campos')" type="text"/>
-            <label for="name">Nombre de usuario</label>
+            <label for="name validationCustom01">Nombre de usuario</label>
+                <div class="invalid-feedback">
+                    Por favor escriba su nombre de usuario.
+                </div>
         </div>
         <div class="mb-3 form-floating">
             <input name="password" placeholder="Contraseña" class="form-control" required="" oninvalid="alert('Debe rellenar todos los campos')" type="password"/>
@@ -21,4 +24,6 @@
         </div>
         </form>
 </div>
+
+
 {% endblock %}

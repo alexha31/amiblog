@@ -5,12 +5,15 @@
 
 {% block main %}
 
-<div class="mb-3">
-    <form action="/postnuevo" method="POST">
-        <input type="file" name="archivo"><br>
-        <button type="submit">Subir imagen</button><br>
-        <label for="exampleFormControlTextarea1" class="form-label">Nueva publicación</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="mb-3 container">
+    <form action="/nuevopost" method="POST">
+    <h2 class="h1">Subir un nuevo post</h2>
+    <input type="file" name="archivo"><br>
+    <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Agrega una descripción</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+        <button class="btn btn-primary">Subir post</button>
     </form>
 </div>
 
