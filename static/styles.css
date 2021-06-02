@@ -18,7 +18,7 @@ body{
 .container{
   width: 100vw;
   padding: 20px;
-  height: 70vh;
+  height: 75vh;
   content: "";
   max-width: 600px;
   margin: 10px auto;
@@ -113,7 +113,11 @@ body{
 }
 
 .contenedor{
-  /*background: linear-gradient(#c3c3d4, #021e25);  */
+  /*background: linear-gradient(#c3c3d4, #021e25);*/
+  width: 100vw;
+  height: 75vh;
+  padding: 20px;
+  background: #fff;
   flex-direction: column;
   margin: 0 auto;
   justify-content: center;
@@ -121,9 +125,9 @@ body{
   box-shadow: 7px 7px 15px rgba(5, 5, 5, 0.527);
 
   text-align: center;
-  background: #6190E8;
+  /*background: #6190E8;
   background: -webkit-linear-gradient(to left, #A7BFE8, #6190E8);
-  background: linear-gradient(to left, #A7BFE8, #6190E8);
+  background: linear-gradient(to left, #A7BFE8, #6190E8);*/
 }
 .contenedor input {
   width: 30%;
@@ -135,6 +139,10 @@ body{
 #texto{
   border-radius: 9px;
 
+}
+#sobre{
+
+  text-align:center;
 }
 
 h4

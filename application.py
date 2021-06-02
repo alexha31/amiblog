@@ -51,7 +51,6 @@ def register():
 @login_required
 def inicio():
     username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
-    print("a")
     return render_template("index.html", username = username[0]["username"])
 
 @app.route('/login', methods=["GET", "POST"])
@@ -98,13 +97,14 @@ def config():
         apellido = db.execute("SELECT apellido FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         descripcion1 = db.execute("SELECT descripcion FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
-        return render_template("config.html", descripcion = descripcion1[0]["descripcion"], nombre = nombre[0]["nombre"], username = username[0]["username"])
+        return render_template("config.html", descripcion = descripcion1[0]["descripcion"], nombre = nombre[0]["nombre"], apellido = apellido[0]["apellido"], username = username[0]["username"])
 
 
 @app.route('/nuevopost', methods=["GET", "POST"])
 @login_required
 def nuevopost():
     if request.method == "POST":
+        descripcion = request.form.get("description")
         #db.execute("INSERT INTO post (autor, description, img, hora) VALUES (:autor, :description, :img, :hora)", autor = session["user_id"], description = description, )
 
         if "imagen" not in request.files:
@@ -113,14 +113,16 @@ def nuevopost():
         file = request.files['imagen']
 
         if file:
+            print("xd")
             nombre = file.filename
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], nombre))
+            a = file.save(os.path.join(app.config["UPLOAD_FOLDER"], nombre))
+            descrip = db.execute("INSERT INTO post (autor, description, hora) VALUES(:autor, :description, datetime('now'))",autor = session["user_id"], description = descripcion, )
             return redirect("/")
         else:
             return render_template("subir.html")
     else:
         username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
-    return render_template("subir.html", username = username[0]["username"])
+        return render_template("subir.html", username = username[0]["username"])
 
 
 @app.route('/perfil', methods=["GET", "POST"])
