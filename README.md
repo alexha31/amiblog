@@ -1,2 +1,2 @@
 # amiblog
-Estudiantes trabajando a último minuto
+Estudiantes estresados trabajando a último minuto
