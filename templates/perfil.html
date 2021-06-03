@@ -10,19 +10,31 @@
             <h2 class="h2 text-center ">{{nombre}} {{apellido}}</h2>
         </div>
         <div>
-            <h3 class="h6 text-center">{{ username }}</h3>
+            <h3 class="h6 text-center">@{{ username }}</h3>
         </div>
         <div id=sobre>
-            <label class="h5 text-center text-muted">Sobre mí</label>
+            <label class="h5 text-center text-muted"><u>Sobre mí</u></label>
             <p class="text-center">{{descripcion}}</p>
         </div>
     </div>
     <br>
     <div class="middle">
-        <div class="d-grid gap-2 mx-auto">
-              <a href="/nuevopost" class="btn btn-primary" role="button">Subir un post</a>
+        <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="/nuevopost" class="btn btn-light" role="button">Subir un post</a>
         </div>
-        <br>
+    </div >
+    <br>
+    <div class = "sub">
+        <div>
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+        </div>
     </div>
 
 </div>

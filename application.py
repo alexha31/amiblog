@@ -37,8 +37,12 @@ def register():
 
         user = db.execute("SELECT username FROM usuarios WHERE username = :username", username = username)
         if len(user) == 1:
+            flash('El nombre de usuario ya está en uso', 'error')
             return render_template("register.html")
 
+        if password != confirm:
+            flash('Las contraseñas no coinciden', 'error')
+            return render_template("register.html")
         if len(user) != 1 and password == confirm:
             a = db.execute("INSERT INTO usuarios (username, password, nombre, apellido) VALUES (:username,:password,:nombre, :apellido)", username = request.form.get("username"), password = generate_password_hash(password), nombre = name, apellido = lastname)
             print("a")
@@ -51,7 +55,9 @@ def register():
 @login_required
 def inicio():
     username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+    description = db.execute("SELECT description FROM post WHERE autor = :autor", autor = session["user_id"])
     return render_template("index.html", username = username[0]["username"])
+
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -62,14 +68,18 @@ def login():
         username = request.form.get("username")
         password = request.form.get("password")
 
+        Error = None
         ingre = db.execute("SELECT * FROM usuarios WHERE username = :username",username=request.form.get("username"))
 
         if len(ingre) != 1:
+            flash('Su nombre de usuario es incorrecto', 'error')
             return render_template("login.html")
 
         contra = ingre[0]["password"]
         if not  check_password_hash(contra, password):
             print("socorro jesus")
+            Error = 'Invalid credentials'
+            flash('Su contraseña es incorrecta')
             return render_template("login.html")
         else:
             print("Bendecido")
@@ -115,8 +125,9 @@ def nuevopost():
         if file:
             print("xd")
             nombre = file.filename
-            a = file.save(os.path.join(app.config["UPLOAD_FOLDER"], nombre))
-            descrip = db.execute("INSERT INTO post (autor, description, hora) VALUES(:autor, :description, datetime('now'))",autor = session["user_id"], description = descripcion, )
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"], nombre))
+            img = os.path.join(app.config["UPLOAD_FOLDER"], nombre)
+            a = db.execute("INSERT INTO post (autor, description, img) VALUES(:autor, :description, :img)",autor = session["user_id"], description = descripcion, img = img)
             return redirect("/")
         else:
             return render_template("subir.html")

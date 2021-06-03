@@ -32,19 +32,31 @@ body{
   text-align: center;
 }
 .sup{
-    width: 100vw;
+    width: 80vw;
     padding: 20px;
     height: 40vh;
+    content: "";
+    margin: 10px auto;
     justify-content: center;
     border-radius: 5px;
     flex-direction: column;
     background: #fff;
 }
 .middle{
+    width: 70vw;
+    padding: 10px;
+    height: 7vh;
+    content: "";
+    margin: 10px auto;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+}
+.sub{
     width: 100vw;
     padding: 10px;
-    height: 10vh;
-    justify-content: right;
+    height: 40vh;
+    justify-content: center;
     border-radius: 5px;
     flex-direction: column;
     background: #fff;
