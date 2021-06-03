@@ -10,18 +10,47 @@
             <h2 class="h2 text-center ">{{nombre}} {{apellido}}</h2>
         </div>
         <div>
-            <h3 class="h6 text-center">{{ username }}</h3>
+            <h3 class="h6 text-center">@{{ username }}</h3>
         </div>
-        <div>
+        <div id=sobre>
+            <label class="h5 text-center text-muted"><u>Sobre mí</u></label>
             <p class="text-center">{{descripcion}}</p>
         </div>
-        <br>
     </div>
-    <div class="mb-3">
-        <form action="/perfil" method="POST">
-              <label for="exampleFormControlTextarea1" class="form-label">Nueva publicación</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </form>
-    </div>
+    <br>
+    <div class="middle">
+        <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="/nuevopost" class="btn btn-light" role="button">Subir un post</a>
+        </div>
+    </div >
+    <br>
+
+    <div class = "sub">
+        <!--
+        <div>
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+        </div>-->
+        {% for post in posts %}
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="{{post.img}}" class="card-img-top" alt="{{post.descripcion}}">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">{{post.descripcion}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </div>
+        {% endfor %}
 </div>
 {% endblock %}

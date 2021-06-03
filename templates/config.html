@@ -11,24 +11,22 @@
             <h1>Editar perfil </h1>
         </div>
         <div>
-            <input name="name" placeholder="Nombre" type="text"/>
+            <input name="name" placeholder="Nombre" type="text" value={{nombre}} />
         </div>
         <div>
-            <input name="lastname" placeholder="Apellido" type="text"/>
-            <h4> Nombre de usuario </h4>
-            <input name="username" placeholder="" type="text"/>
+            <input name="lastname" placeholder="Apellido" type="text" value={{apellido}} />
         </div>
 
         <div class="acerca">
             <h4> Acerca de tu perfil </h4>
-            <textarea name="acercade" id="texto" cols="30" rows="10"></textarea>
+            <textarea name="acercade" id="texto" cols="30" rows="7">{{descripcion}}</textarea>
             <div>
                 <button class="btn btn-primary">Cancelar</button>
                 <button class="btn btn-primary" type="submit">Guardar</button>
             </div>
         </div>
     </form>
-</div>    
-            
-       
+</div>
+
+
 {% endblock %}
