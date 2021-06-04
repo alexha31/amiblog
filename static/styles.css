@@ -14,6 +14,17 @@ body{
   font-size: 180%;
 }
 
+.container1{
+  width: 80vw;
+  padding: 20px;
+  content: "";
+  max-width: 600px;
+  margin: 10px auto;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #fff;
+}
 
 .container{
   width: 100vw;

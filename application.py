@@ -55,8 +55,9 @@ def register():
 @login_required
 def inicio():
     username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
-    description = db.execute("SELECT description FROM post WHERE autor = :autor", autor = session["user_id"])
-    return render_template("index.html", username = username[0]["username"])
+    posts = db.execute("SELECT p.*, u.username FROM post p INNER JOIN usuarios u on u.ID = p.autor")
+    print(username)
+    return render_template("index.html", username = username[0]["username"], posts = posts)
 
 
 @app.route('/login', methods=["GET", "POST"])
