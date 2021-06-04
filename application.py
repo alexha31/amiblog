@@ -56,8 +56,11 @@ def register():
 def inicio():
     username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
     posts = db.execute("SELECT p.*, u.username FROM post p INNER JOIN usuarios u on u.ID = p.autor")
+    comentarios =db.execute("SELECT c.*, u.username FROM comentarios c INNER JOIN usuarios u on u.ID = c.id_user")
+
     print(username)
-    return render_template("index.html", username = username[0]["username"], posts = posts)
+    return render_template("index.html", username = username[0]["username"], posts = posts, comentarios=comentarios)
+
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -111,6 +114,11 @@ def config():
         return render_template("config.html", descripcion = descripcion1[0]["descripcion"], nombre = nombre[0]["nombre"], apellido = apellido[0]["apellido"], username = username[0]["username"])
 
 
+@app.route('/config', methods=["GET", "POST"])
+@login_required
+def cancelar():
+    return redirect("/perfil")
+
 @app.route('/nuevopost', methods=["GET", "POST"])
 @login_required
 def nuevopost():
@@ -136,6 +144,39 @@ def nuevopost():
         username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         return render_template("subir.html", username = username[0]["username"])
 
+@app.route('/', methods=["GET", "POST"])
+@login_required
+def postcomment():
+    if request.method == "POST":
+        comentario = request.form.get("comentario")
+        #db.execute("INSERT INTO comentarios (id_post, id_user, descripcion) VALUES (:id_post, :id_user, :descripcion)", id_post = . id_user = session["user_id"], descripcion = descripcion)
+        return render_template("index.html")
+
+@app.route('/<username>')
+@login_required
+def perfiles(username):
+
+    x = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+    if username == x[0]["username"]:
+        return redirect("/perfil")
+
+    lista = db.execute("SELECT * FROM usuarios WHERE username = :username", username = username)
+    nombre = lista[0]["nombre"]
+    apellido = lista[0]["apellido"]
+    username1 = username
+    descripcion = lista[0]["descripcion"]
+    username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+
+
+    if descripcion == None:
+            descripcion = ""
+    #db.execute("SELECT nombre FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+
+    return render_template("perfiles.html", nombre = nombre, apellido = apellido, username1 = username1, descripcion = descripcion, username = username[0]["username"])
+
+"""@app.route('/comentarios', methods=["GET", "POST"])
+@login_required
+def comments():"""
 
 @app.route('/perfil', methods=["GET", "POST"])
 @login_required
@@ -148,9 +189,16 @@ def perfil():
         apellido = db.execute("SELECT apellido FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
         descripcion = db.execute("SELECT descripcion FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+        if descripcion == None:
+            descripcion = ""
         print("a")
         return render_template("perfil.html", username = username[0]["username"], nombre = nombre[0]["nombre"], apellido = apellido[0]["apellido"], descripcion = descripcion[0]["descripcion"])
 
+@app.route("/eliminarpost", methods=["POST"])
+def eliminar():
+    id_post = request.form.get("id_post")
+    db.execute(f"DELETE FROM post WHERE postid={id_post}")
+    return redirect("/")
 
 @app.route("/salir")
 def salir():

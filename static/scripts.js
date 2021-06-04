@@ -18,3 +18,7 @@
       }, false)
     })
 })()
+
+$( "input:text" ).on("click",function(){
+  $("input[type=submit]").removeAttr("disabled");
+  });
