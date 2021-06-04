@@ -31,13 +31,13 @@ body{
 }
 
 .container1{
-  width: 80vw;
+  width: 85vw;
   padding: 20px;
   content: "";
   max-width: 600px;
   margin: 10px auto;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 10px;
   flex-direction: column;
   background: #fff;
 }
@@ -94,7 +94,13 @@ body{
   clear: both;
   display: table;
 }
+.me-2 {
+    margin-right: .5rem!important;
+}
 
+.navbar>.container{
+      justify-content: space-between;
+}
 .x{
     margin-top: 8px;
 }
@@ -114,10 +120,12 @@ body{
  }
  .form-control1{
 
-    width: 95%;
+    width: 88%;
     margin: 0 auto;
-    /*height: 100%;*/
-    border-radius: 5px;
+    height: 100%;
+    border: 1px solid #ced4da;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
  }
  .form-floating>.form-control, .form-floating>.form-select{
  height: 2.75rem;
@@ -126,10 +134,9 @@ body{
 .h1{
     font-family: 'Fjalla One', sans-serif;
     text-align:center;
+    color:#fff;
 }
-.me-2{
-  align-items:right;
-}
+
 .post{
   width: 100vw;
   padding: 20px;
@@ -145,11 +152,7 @@ body{
 .post p{
     text-align:center;
 }
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: 0;
-}
+
 
 .contenedor{
   /*background: linear-gradient(#c3c3d4, #021e25);*/
