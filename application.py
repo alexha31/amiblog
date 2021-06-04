@@ -55,8 +55,8 @@ def register():
 @login_required
 def inicio():
     username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
-    description = db.execute("SELECT description FROM post WHERE autor = :autor", autor = session["user_id"])
-    return render_template("index.html", username = username[0]["username"])
+    posts = db.execute("SELECT p.*, u.username FROM post p INNER JOIN usuarios u on u.ID = p.autor")
+    return render_template("index.html", username = username[0]["username"], posts = posts)
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -164,6 +164,23 @@ def salir():
 
     session.clear()
     return redirect("/")
+
+@app.route("/post")
+@login_required
+def post():
+    posts = db.execute("SELECT p.*, u.username FROM post p INNER JOIN usuarios u on u.ID = p.autor")
+    username = db.execute("SELECT username FROM usuarios WHERE ID = :ID", ID = session["user_id"])
+    print(posts)
+    print(username)
+    return render_template("post.html", posts=posts,username=username)
+
+
+@app.route("/post/<post_id>")
+@login_required
+def postver(post_id):
+    posts = b.execute("SELECT p.*, u.username FROM post p INNER JOIN usuarios u on u.ID = p.autor WHERE id_post=:post_id", post_id = post_id)
+    print(posts)
+    return render_template("post.html", posts=posts)
 """
 @app.route('/busq', methods=["GET", "POST"])
 @login_required

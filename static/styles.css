@@ -30,6 +30,17 @@ body{
   font-size: 180%;
 }
 
+.container1{
+  width: 80vw;
+  padding: 20px;
+  content: "";
+  max-width: 600px;
+  margin: 10px auto;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #fff;
+}
 
 .container{
   width: 100vw;
@@ -185,3 +196,29 @@ h1
   font-weight: bold;
   color: #333;
 }
+
+.sub{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}
+/*#foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}*/
+/*#foto{
+    display: flex;
+    overflow: hidden;
+    width: 28%;
+    margin-bottom: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    margin-right: 3%;
+    height: auto;
+    flex-wrap: wrap;
+}*/
