@@ -13,7 +13,7 @@ body{
   font-family: 'Cookie', cursive;
   font-size: 180%;
 }
-
+/*
 .container1{
   width: 85vw;
   padding: 20px;
@@ -26,7 +26,7 @@ body{
   background: #fff;
 }
 
-.container{
+.container2{
   width: 100vw;
   padding: 20px;
   height: 75vh;
